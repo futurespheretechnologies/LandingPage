@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Sphere Technology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div>
+    <h1>Future Sphere Technology</h1>
+    <p>Follow us on Instagram to continue to the registration form.</p>
+    <a class="button" href="https://www.instagram.com/futurespheretechnologies?igsh=a3IydDg5ZHJrYTFn" target="_blank" onclick="enableContinueBtn()">Follow on Instagram</a>
+    <br />
+    <a id="continueBtn" class="button" href="#" onclick="handleClick(event)">I Have Followed – Continue</a>
+  </div>
+
+  <script>
+    let isUnlocked = false;
+
+    function enableContinueBtn() {
+      if (!isUnlocked) {
+        const btn = document.getElementById('continueBtn');
+        btn.classList.add('enabled');
+        btn.href = 'https://docs.google.com/forms/d/e/1FAIpQLSckkHPpL08hfcJD5gtOHeOH_yKSKGTOlOdqXYkrmGPYIa9Q1w/viewform?pli=1';
+        isUnlocked = true;
+      }
+    }
+
+    function handleClick(event) {
+      const btn = document.getElementById('continueBtn');
+      if (!btn.classList.contains('enabled')) {
+        event.preventDefault();
+        alert('Please follow our Instagram before continuing.');
+      }
+    }
+  </script>
+</body>
+</html>
